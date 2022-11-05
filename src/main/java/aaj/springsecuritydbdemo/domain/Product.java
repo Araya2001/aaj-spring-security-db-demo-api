@@ -38,7 +38,7 @@ public class Product extends BaseEntity {
     this.description = description;
   }
 
-  @ManyToOne
+  @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
   public Warehouse getWarehouse() {
     return warehouse;
   }
