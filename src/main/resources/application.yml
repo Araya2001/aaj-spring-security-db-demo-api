@@ -1,0 +1,29 @@
+# Generated Documentation Config
+springdoc:
+  swagger-ui:
+    path: /security-db-demo/docs
+
+# Spring Config
+spring:
+  mvc:
+    converters:
+      preferred-json-mapper: gson
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url:
+    username:
+    password:
+    driver-class-name: org.postgresql.Driver
+
+# Server Config
+server:
+  http2:
+    enabled: true
+  port: ${PORT:8080}
+  servlet:
+    context-path: /security-db-demo/api
