@@ -7,5 +7,5 @@ import java.util.List;
 
 @Repository
 public interface UnsafeProductRepository {
-  List<Product> findAllByWarehouseUnsafe(Integer warehouseId);
+  List<Product> findAllByWarehouseUnsafe(String warehouseId);
 }

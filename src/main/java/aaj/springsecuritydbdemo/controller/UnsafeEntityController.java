@@ -24,7 +24,7 @@ public class UnsafeEntityController {
   }
 
   @GetMapping(value = "/product/by-warehouse", produces = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<ProductResponse> doGetByWarehouse(@RequestParam(required = false, name = "id") Integer id, HttpServletRequest httpServletRequest) {
+  public ResponseEntity<ProductResponse> doGetByWarehouse(@RequestParam(required = false, name = "id") String id, HttpServletRequest httpServletRequest) {
     log.warn("NEW REQUEST - HTTP GET request on resource mapping \"v1/unsafe-entity/product/by-warehouse " + httpServletRequest.getHeader("X-FORWARDED-FOR"));
     HttpStatus status = HttpStatus.OK;
     ProductResponse productResponse = new ProductResponse();

@@ -13,7 +13,7 @@ public interface EntityService {
 
   List<Product> findAllByWarehouse(Warehouse warehouse);
 
-  List<Product> findAllByWarehouseUnsafe(Integer warehouse);
+  List<Product> findAllByWarehouseUnsafe(String warehouse);
 
   List<Product> findAllProducts();
 
