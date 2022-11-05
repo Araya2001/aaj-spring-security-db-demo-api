@@ -14,11 +14,15 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: create-drop
+    defer-datasource-initialization: true
   datasource:
     url: jdbc:postgresql://localhost:5432/security_demo
     username: dev-ninja
     password: ujac8ozJExiHFfcTNPd6
     driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      mode: always
 
 # Server Config
 server:
