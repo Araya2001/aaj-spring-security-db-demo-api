@@ -7,9 +7,9 @@ import java.io.Serializable;
 public abstract class AbstractResponse implements Serializable {
   @SerializedName("status")
   protected String status;
-  @SerializedName("status")
+  @SerializedName("message")
   protected String message;
-  @SerializedName("status")
+  @SerializedName("result")
   protected boolean result;
 
   public String getMessage() {
