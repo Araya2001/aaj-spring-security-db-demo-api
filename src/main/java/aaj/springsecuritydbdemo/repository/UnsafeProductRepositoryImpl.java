@@ -20,7 +20,7 @@ public class UnsafeProductRepositoryImpl implements UnsafeProductRepository {
   @Override
   public List<Product> findAllByWarehouseUnsafe(String warehouseId) {
     String sql = "SELECT * from product where warehouse = " + warehouseId;
-    Query query = em.createNativeQuery(jpql, Product.class);
+    Query query = em.createNativeQuery(sql, Product.class);
     return (List<Product>) query.getResultList();
   }
 }
