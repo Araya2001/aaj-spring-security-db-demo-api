@@ -16,7 +16,7 @@ spring:
       ddl-auto: create-drop
     defer-datasource-initialization: true
   datasource:
-    url: jdbc:postgresql://localhost:5432/security_demo
+    url: jdbc:postgresql://postgres_db_security_demo:5432/security_demo
     username: dev-ninja
     password: ujac8ozJExiHFfcTNPd6
     driver-class-name: org.postgresql.Driver
