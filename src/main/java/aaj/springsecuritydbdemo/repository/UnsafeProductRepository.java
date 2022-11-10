@@ -8,4 +8,5 @@ import java.util.List;
 @Repository
 public interface UnsafeProductRepository {
   List<Product> findAllByWarehouseUnsafe(String warehouseId);
+  List<Product> findAllByWarehousePotentiallyUnsafe(Integer warehouseId);
 }

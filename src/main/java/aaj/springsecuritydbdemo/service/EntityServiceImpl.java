@@ -71,6 +71,16 @@ public class EntityServiceImpl implements EntityService {
   }
 
   @Override
+  public List<Product> findAllByWarehousePotentiallyUnsafe(Integer warehouse) {
+    try {
+      return unsafeProductRepository.findAllByWarehousePotentiallyUnsafe(warehouse);
+    } catch (Exception e) {
+      log.error("@EntityServiceImpl.saveProduct error:", e);
+    }
+    return null;
+  }
+
+  @Override
   public List<Product> findAllProducts() {
     try {
       return productRepository.findAll();

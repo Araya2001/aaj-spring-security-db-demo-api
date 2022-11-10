@@ -40,4 +40,22 @@ public class UnsafeEntityController {
     }
     return new ResponseEntity<>(productResponse, status);
   }
+
+  @GetMapping(value = "/product/by-warehouse/potentially-unsafe", produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<ProductResponse> doGetByWarehousePotentiallyUnsafe(@RequestParam(required = false, name = "id") Integer id, HttpServletRequest httpServletRequest) {
+    log.warn("NEW REQUEST - HTTP GET request on resource mapping \"v1/unsafe-entity/product/by-warehouse/potentially-unsafe " + httpServletRequest.getHeader("X-FORWARDED-FOR"));
+    HttpStatus status = HttpStatus.OK;
+    ProductResponse productResponse = new ProductResponse();
+    productResponse.setMessage("");
+    productResponse.setResult(true);
+    productResponse.setStatus("OK");
+    productResponse.setProduct(entityService.findAllByWarehousePotentiallyUnsafe(id));
+    if (productResponse.getProduct() == null) {
+      productResponse.setMessage("INTERNAL SERVER ERROR");
+      productResponse.setResult(false);
+      productResponse.setStatus("ERROR");
+      status = HttpStatus.INTERNAL_SERVER_ERROR;
+    }
+    return new ResponseEntity<>(productResponse, status);
+  }
 }

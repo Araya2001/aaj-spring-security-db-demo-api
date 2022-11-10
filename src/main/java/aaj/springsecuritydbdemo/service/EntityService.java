@@ -22,4 +22,6 @@ public interface EntityService {
   Optional<Product> findProductById(Integer id);
 
   Optional<Warehouse> findWarehouseById(Integer id);
+
+  public List<Product> findAllByWarehousePotentiallyUnsafe(Integer warehouse);
 }

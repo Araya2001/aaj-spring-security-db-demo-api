@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "b8368ce0-f600-4eb0-a2fa-fc11b21142a5",
+		"name": "SQL Injection Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19531793"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/security-db-demo/api/v1/safe-entity/product?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"security-db-demo",
+						"api",
+						"v1",
+						"safe-entity",
+						"product"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Products By Warehouse",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/security-db-demo/api/v1/safe-entity/product/by-warehouse?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"security-db-demo",
+						"api",
+						"v1",
+						"safe-entity",
+						"product",
+						"by-warehouse"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Products By Warehouse (UNSAFE)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/security-db-demo/api/v1/unsafe-entity/product/by-warehouse?id=1;;DROP TABLE product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"security-db-demo",
+						"api",
+						"v1",
+						"unsafe-entity",
+						"product",
+						"by-warehouse"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1;;DROP TABLE product"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Products By Warehouse (POTENTIALLY UNSAFE)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/security-db-demo/api/v1/unsafe-entity/product/by-warehouse/potentially-unsafe?id=1;;DROP TABLE product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"security-db-demo",
+						"api",
+						"v1",
+						"unsafe-entity",
+						"product",
+						"by-warehouse",
+						"potentially-unsafe"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1;;DROP TABLE product"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
